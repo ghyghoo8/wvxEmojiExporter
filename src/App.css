@@ -1,0 +1,85 @@
+@import '~antd/dist/antd.css';
+.App {
+  width: 100vw;
+  height:100vh;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height:100vh;
+}
+
+.path-select-open {
+  padding: 10px 0;
+  cursor: pointer;
+}
+.path-select-open:hover {
+  text-decoration: underline;
+}
+
+.image-list-wrap {
+  width: 100%;
+  word-break: break-all;
+}
+
+.image-list {
+  height:100vh;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.App-logo {
+  height: 20vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo.rotate {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+div.inline-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+div.inline-logo > img {
+  margin-right: 3vw;
+}
+
+div.inline-logo .smaller {
+  height: 10vh;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+  margin-bottom: 5vh;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
