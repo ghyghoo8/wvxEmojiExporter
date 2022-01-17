@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-12-23 20:14:22
- * @LastEditTime: 2022-01-14 16:48:24
+ * @LastEditTime: 2022-01-17 09:51:08
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: /scaffold-demo/tauri-app/tauri-app/src/App.tsx
@@ -42,17 +42,17 @@ const App: FC = () => {
 
   // 选择要导出的文件夹 & 执行导出
   const exportEmojiByPathSelected = async () => {
+    setExportLoading(true);
     const tmpPath = await dialog.open({ directory: true, multiple: false })
-    const exportPath = `${tmpPath}/wvx-export-folder_${Date.now()}`
-    if (exportPath) {
-      setExportLoading(true);
+    if (tmpPath) {
+      const exportPath = `${tmpPath}/wvx-export-folder_${Date.now()}`
       const res = await invoke('search_folder_by_path', { folderPath: appFolderPath, exportPath });
       if (res) {
         message.success('导出成功');
         setExportFolderPath(Array.isArray(exportPath) ? exportPath[0] : exportPath)
       }
-      setExportLoading(false)
     }
+    setExportLoading(false);
   }
 
   return (
